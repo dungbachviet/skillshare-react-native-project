@@ -1,26 +1,25 @@
-import React from "react";
-import { TouchableOpacity, StyleSheet, Image, Text } from "react-native";
-import PropTypes from "prop-types";
+import React from 'react';
+import {TouchableOpacity, StyleSheet, Image, Text} from 'react-native';
+import PropTypes from 'prop-types';
 
-const placeholderImage = require("../assets/images/placeholder.png");
+const placeholderImage = require('../assets/images/placeholder.png');
 
 const propTypes = {
   item: PropTypes.object,
 };
 class Card extends React.PureComponent {
   render() {
-    const { navigation, item } = this.props;
+    const {navigation, item} = this.props;
     return (
       <TouchableOpacity
-        onPress={() => navigation.navigate("Detail", { movieId: item.id })}
-        style={styles.container}
-      >
+        onPress={() => navigation.navigate('Detail', {movieId: item.id})}
+        style={styles.container}>
         <Image
           resizeMode="cover"
           style={styles.image}
           source={
             item.poster_path
-              ? { uri: "https://image.tmdb.org/t/p/w500" + item.poster_path }
+              ? {uri: 'https://image.tmdb.org/t/p/w500' + item.poster_path}
               : placeholderImage
           }
         />
@@ -35,8 +34,8 @@ class Card extends React.PureComponent {
 const styles = StyleSheet.create({
   container: {
     padding: 5,
-    position: "relative",
-    alignItems: "center",
+    position: 'relative',
+    alignItems: 'center',
     height: 200,
     marginBottom: 8,
   },
@@ -46,10 +45,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   movieName: {
-    position: "absolute",
+    position: 'absolute',
     width: 100,
     top: 10,
-    textAlign: "center",
+    textAlign: 'center',
   },
 });
 
